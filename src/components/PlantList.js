@@ -1,10 +1,11 @@
-import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList() {
-  return (
-    <ul className="cards">{/* render PlantCards components in here */}</ul>
-  );
+function PlantList({ plants }) {
+  const plantLists = plants.map((plant, index) => (
+    <PlantCard key={"plant-" + index} plant={plant} />
+  ));
+
+  return <ul className="cards">{plantLists}</ul>;
 }
 
 export default PlantList;
